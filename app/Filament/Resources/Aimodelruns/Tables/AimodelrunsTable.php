@@ -31,6 +31,8 @@ class AimodelrunsTable
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('created_at')
+                    ->defaultSort('created_at', 'desc')
+
                     ->label(__('admin.title.created_at'))
                     ->dateTime()
                     ->sortable(),
