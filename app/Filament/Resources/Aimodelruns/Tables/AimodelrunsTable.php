@@ -13,26 +13,32 @@ class AimodelrunsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('created_at', 'desc')
+            // ->reorderable(4)
             ->columns([
+                TextColumn::make('key.key')
+                    ->limit(10)
+                    ->wrap()
+                    ->label(__('admin.title.key'))
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('aimodel.name')
                     ->label(__('admin.title.aimodel'))
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('input_data')
                     ->label(__('admin.title.input_data'))
-                    ->limit(50)
+                    ->limit(20)
                     ->wrap(),
                 TextColumn::make('output_data')
                     ->label(__('admin.title.output_data'))
-                    ->limit(50)
+                    ->limit(20)
                     ->wrap(),
                 TextColumn::make('status')
                     ->label(__('admin.title.status'))
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('created_at')
-                    ->defaultSort('created_at', 'desc')
-
                     ->label(__('admin.title.created_at'))
                     ->dateTime()
                     ->sortable(),

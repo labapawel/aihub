@@ -10,6 +10,7 @@ use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Model;
+use Filament\Tables\Columns\CheckboxColumn;
 
 class AimodelsTable
 {
@@ -35,6 +36,9 @@ class AimodelsTable
                 TextColumn::make('group.name')
                     ->label(__('admin.title.group'))
                     ->sortable(),
+                 CheckboxColumn::make('active')
+                    ->label(__('admin.title.active'))
+                    ->sortable(),   
 
             ])
             ->filters([

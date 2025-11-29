@@ -13,6 +13,7 @@ return [
     ],
     'title' => [
         'input_data' => 'Dane wejściowe',
+        'active' => 'Aktywne',
         'output_data' => 'Dane wyjściowe',
         'status' => 'Status',
         'aimodel' => 'Model AI',

@@ -24,6 +24,7 @@ return [
         'created_at' => 'Створено о',
         'aimodelid' => 'ID Моделі ШІ',
         'version' => 'Версія',
+        'active' => 'Активний',
         
     ],
     'module' => [

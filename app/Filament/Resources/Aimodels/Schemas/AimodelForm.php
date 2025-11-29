@@ -8,6 +8,7 @@ use Filament\Forms\Components\Textarea;
 use LaraZeus\TorchFilament\Infolists\TorchEntry;
 use Filament\Forms\Components\Select;
 // use WeStacks\FilamentMonacoEditor\MonacoEditor;
+use Filament\Forms\Components\Checkbox;
 
 
 class AimodelForm
@@ -59,6 +60,10 @@ class AimodelForm
                     ->label(__('admin.title.schedule'))
                     ->relationship('schedule', 'name')
                     ->required()
+                    ->columnSpanFull(),
+                    Checkbox::make('active')
+                    ->label(__('admin.title.active'))
+                    ->default(true)
                     ->columnSpanFull(),
             ]);
     }

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Keys\Schemas;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Checkbox;
 
 
 class KeyForm
@@ -28,6 +29,9 @@ class KeyForm
                     ->label(__('admin.title.groups'))
                     ->multiple()
                     ->relationship('groups', 'name')
+                    ->columnSpanFull(),
+                Checkbox::make('active')
+                    ->label(__('admin.title.active'))
                     ->columnSpanFull(),
             ]);
     }

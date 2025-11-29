@@ -11,10 +11,17 @@ class Aimodelrun extends Model
         'input_data',
         'output_data',
         'status',
+        'key_id',
     ];
 
     public function aimodel()
     {
         return $this->belongsTo(Aimodel::class);
     }
+
+    public function key()
+    {
+        return $this->belongsTo(Key::class);
+    }
+
 }

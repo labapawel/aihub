@@ -15,4 +15,13 @@ class Key extends Model
     {
         return $this->belongsToMany(Group::class);
     }
+    public function getRequestsusedAttribute()
+    {
+        return $this->aimodelruns()->count();
+    }
+    
+    public function aimodelruns()
+    {
+        return $this->hasMany(Aimodelrun::class);
+    }
 }

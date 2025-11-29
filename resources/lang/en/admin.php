@@ -13,6 +13,7 @@ return [
     ],
     'title' => [
         'modules_management' => 'Modules Management',
+        'active' => 'Active',
         'runs_last_minute' => 'Runs Last Minute',
         'runs_last_day' => 'Runs Last Day',
         'name' => 'Name',

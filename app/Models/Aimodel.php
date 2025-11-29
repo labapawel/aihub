@@ -15,8 +15,10 @@ class Aimodel extends Model
         'limitperminute',
         'group_id',
         'scheduler_id',
+        'active',
     ];
     
+
 
     public function getMinutesCountAttribute()
     {
@@ -53,6 +55,6 @@ class Aimodel extends Model
 
     public function aimodulesrun()
     {
-        return $this->hasMany(Aimodelrun::class);
+        return $this->hasMany(Aimodelrun::class);   
     }
 }

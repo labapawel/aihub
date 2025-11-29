@@ -24,6 +24,7 @@ return [
         'limitperminute' => 'Ліміт на хвилину',
         'new_record_name' => 'Назва нового запису',
         'group' => 'Група',
+        'active' => 'Активний',
         'schedule' => 'Графік',
         'key' => 'Ключ',
         'requests_used' => 'Використані запити',

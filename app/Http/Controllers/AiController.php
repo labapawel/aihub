@@ -18,7 +18,7 @@ class AiController extends Controller
             abort(401, 'Group not found');
         }
 
-        $models = $group->aiModels()->inRandomOrder()->get();
+        $models = $group->aiModels()->where('active', true)->inRandomOrder()->get();
         if ($models->isEmpty()) {
             abort(401, 'No models available in the group');
         }
@@ -38,7 +38,7 @@ class AiController extends Controller
         $res = $selectedModel;
         $prompt = $request->get('prompt', '');
         // dd($prompt);
-        $log = \App\Models\Aimodelrun::create(['aimodel_id'=>$res->id, 'input_data'=>$prompt, 'status'=>'running']);
+        $log = \App\Models\Aimodelrun::create(['aimodel_id'=>$res->id, 'input_data'=>$prompt, 'key_id'=>$keyRecord->id, 'status'=>'running']);
         $log->save();
         $output = '';
         try{

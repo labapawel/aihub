@@ -17,6 +17,7 @@ return new class extends Migration
             $table->longText('input_data');
             $table->longText('output_data')->nullable();
             $table->enum('status', ['pending', 'running', 'completed', 'failed'])->default('pending');
+            $table->foreignId('key_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

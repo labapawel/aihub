@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\CheckboxColumn;
 
 
 class KeysTable
@@ -21,6 +22,11 @@ class KeysTable
                     ->sortable(),
                 TextColumn::make('requests_used')
                     ->label(__('admin.title.requests_used'))
+                    ->getStateUsing(fn (object $record) => $record->requestsused)
+                    ->sortable(),
+                CheckboxColumn::make('active')
+                    ->label(__('admin.title.active'))
+                    ->sortable(),
             ])
             ->filters([
                 //
